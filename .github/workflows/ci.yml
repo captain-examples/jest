@@ -1,0 +1,17 @@
+name: 'captain CI example'
+on:
+  pull_request:
+  push:
+    paths-ignore:
+      - README.md
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+      - run: npm ci
+      - run: npm test
