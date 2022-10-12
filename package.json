@@ -1,0 +1,22 @@
+{
+  "name": "captain-example-with-jest",
+  "version": "1.0.0",
+  "description": "Reference Implementation for running jest tests via github actions and uploading the results to captain",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/captain-examples/jest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/captain-examples/jest/issues"
+  },
+  "homepage": "https://github.com/captain-examples/jest#readme",
+  "devDependencies": {
+    "jest": "^29.1.2"
+  }
+}
