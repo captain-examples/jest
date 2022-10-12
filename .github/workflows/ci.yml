@@ -14,4 +14,19 @@ jobs:
           node-version: 16
           cache: 'npm'
       - run: npm ci
-      - run: npm test
+      - run: npm test -- --json --outputFile=tmp/jest.json --testLocationInResults
+      - name: Upload test results to Captain
+        uses: rwx-research/upload-captain-artifact@v1
+        if: always()
+        continue-on-error: true
+        with:
+          artifacts: |
+            [
+              {
+                "name": "Jest",
+                "path": "tmp/jest.json",
+                "kind": "test_results",
+                "parser": "jest_json"
+              }
+            ]
+          captain-token: '${{ secrets.CAPTAIN_API_TOKEN }}'
