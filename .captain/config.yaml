@@ -1,0 +1,5 @@
+test-suites:
+  captain-examples-jest:
+    command: npm test -- --json --outputFile=tmp/jest.json --testLocationInResults
+    results:
+      path: tmp/jest.json

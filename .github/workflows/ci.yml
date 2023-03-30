@@ -16,11 +16,6 @@ jobs:
       - run: npm clean-install
       - uses: rwx-research/setup-captain@v1
       - name: Run tests
-        run: |
-          captain run \
-            --suite-id captain-examples-jest \
-            --test-results tmp/jest.json \
-            --  \
-            npm test -- --json --outputFile=tmp/jest.json --testLocationInResults
+        run: captain run captain-examples-jest
         env:
           RWX_ACCESS_TOKEN: ${{ secrets.RWX_ACCESS_TOKEN }}
